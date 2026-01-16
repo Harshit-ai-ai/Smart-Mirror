@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Mirror</title>
+    <style>
+        body {
+            background: black;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+        }
+        .time {
+            font-size: 60px;
+        }
+        .date {
+            font-size: 25px;
+        }
+        .weather {
+            font-size: 30px;
+        }
+        img {
+            margin-top: 20px;
+            width: 200px;
+        }
+	.news {
+	    margin-top: 30px;
+   	    text-align: left;
+ 	    width: 70%;
+	    margin-left: auto;
+	    margin-right: auto;
+	    font-size: 18px;
+	}
+
+	.news ul {
+	    list-style-type: none;
+	    padding: 0;
+	}
+
+	.news li {
+	    margin-bottom: 10px;
+	}
+
+    </style>
+</head>
+<body>
+
+<div class="time">{{ time }}</div>
+<div class="date">{{ date }}</div>
+<div class="weather">{{ weather }} | {{ temp }}°C</div>
+
+<img src="/static/{{ avatar }}">
+<div class="news">
+    <h3>Top Headlines</h3>
+    <ul>
+        {% for headline in headlines %}
+            <li>{{ headline }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+</body>
+</html>
